@@ -6,8 +6,7 @@
         <RouterLink class="text-2xl font-semibold border-e-4 rounded-full px-3 border-r-primary-inverse">Marketplace</RouterLink>
       </div>
       <div>
-        <MegaMenu :model="items" />
-
+        <MegaMenu :model="items" class="font-semibold"/>
       </div>
     </div>
   </header>
@@ -35,7 +34,7 @@
             </template>
         </Carousel>
        </div>
-       <div class="infinite-scroll w-full bg-gray-100 rounded overflow-auto">
+       <div class="infinite-scroll w-full bg-gray-100 rounded overflow-auto mt-5">
         <div class="scroll-content flex justify-evenly">
           <img v-for="(image, index) in images" :src="image.src" :alt="image.alt" :key="index" class="h-24 transition duration-500 ease-in-out transform grayscale hover:grayscale-0" />
         </div>
@@ -46,7 +45,7 @@
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
 
       <div class="main-items flex flex-wrap justify-around">
-        <div v-for="( product, index) in product" :key="index" class="border-1 surface-border border-round m-2 p-3 w-96 hover:shadow-lg">
+        <div v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout' }" v-for="( product, index) in product" :key="index" class="border-1 surface-border border-round m-2 p-3 w-96 hover:shadow-lg animation-duration-1000">
           <div class="mb-3">
             <div class="relative mx-auto">
               <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="product.name" class="border-round" />
