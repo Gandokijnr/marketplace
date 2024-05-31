@@ -31,3 +31,13 @@ p {
     right: 0;
     left: auto;
 }
+
+.button, input, optgroup, select, textarea{
+    padding: 10px!important;
+    border: solid 1px lightgrey;
+    width: 20rem;
+}
+
+.signup-height {
+    height: 40rem!important;
+}
