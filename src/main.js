@@ -5,9 +5,9 @@ import "primeicons/primeicons.css";
 
 
 import "@/assets/main.css";
-// import "@/assets/base.css";
-// import "@/assets/flags.css";
-// import "@/assets/navbar.css";
+import "@/assets/base.css";
+import "@/assets/flags.css";
+import "@/assets/navbar.css";
 import "@/assets/style.css";
 
 import { createApp } from "vue";

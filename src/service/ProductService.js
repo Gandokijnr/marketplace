@@ -5,7 +5,7 @@ export const ProductService = {
                 id: '1000',
                 code: 'f230fh0g3',
                 name: 'Bamboo Watch',
-                description: 'Product Description',
+                description: 'A bamboo watch is a timepiece characterized by its unique and eco-friendly materials. Typically, the watch is crafted from bamboo wood, which lends it a lightweight and natural aesthetic. Bamboo watches are known for their sustainability, as bamboo is a renewable resource that grows quickly and requires minimal resources to cultivate. These watches often feature a minimalist design, with the natural grain of the bamboo wood giving each piece a distinct and organic appearance. Bamboo watches appeal to environmentally conscious individuals looking for stylish accessories that make a minimal impact on the environment.',
                 image: 'bamboo-watch.jpg',
                 price: 65,
                 category: 'Accessories',

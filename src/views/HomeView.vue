@@ -56,42 +56,42 @@
     </div>
     <hr class="mt-5" />
 
-    <div class="main-recent-item mt-5 p-4 container mx-auto">
+    <div class="main-recent-item mt-5 p-2 container mx-auto">
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
-      <div class="main-items flex flex-wrap container mx-auto">
+      
+      <div class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         <RouterLink
           v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout' }"
-          v-for="(products, index) in products"
+          v-for="(product, index) in products"
           :key="index"
-          :to="{ name: 'detailspage', params: { id: products.id } }"
-          class="border-1 surface-border border-round m-2 p-3 w-96 hover:shadow-lg animation-duration-1000"
+          :to="{ name: 'detailspage', params: { id: product.id } }"
+          class="border-1 surface-border border-round m-2 p-3 hover:shadow-lg"
         >
-          <div class="mb-3">
-            <div class="relative mx-auto">
-              <img
-                :src="'https://primefaces.org/cdn/primevue/images/product/' + products.image"
-                :alt="products.name"
-                class="border-round"
-              />
-              <Tag
-                :value="products.inventoryStatus"
-                :severity="getSeverity(products.inventoryStatus)"
-                class="absolute"
-                style="left:5px; top: 5px"
-              />
-            </div>
+          <div class="mb-3 relative">
+            <img
+              :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image"
+              :alt="product.name"
+              class="border-round w-full"
+            />
+            <Tag
+              :value="product.inventoryStatus"
+              :severity="getSeverity(product.inventoryStatus)"
+              class="absolute top-2 left-2"
+            />
           </div>
-          <div class="mb-3 font-medium">{{ products.name }}</div>
-          <div class="flex justify-content-between align-items-center">
-            <div class="mt-0 font-semibold text-xl">${{ products.price }}</div>
-            <span>
+          <div class="mb-3 font-medium">{{ product.name }}</div>
+          <div class="flex justify-between items-center">
+            <div class="font-semibold text-xl">${{ product.price }}</div>
+            <div>
               <Button icon="pi pi-heart" severity="secondary" outlined />
               <Button icon="pi pi-shopping-cart" class="ml-2" />
-            </span>
+            </div>
           </div>
         </RouterLink>
       </div>
     </div>
+
+
 
     <ScrollTop class="bg-green-600" />
   </main>

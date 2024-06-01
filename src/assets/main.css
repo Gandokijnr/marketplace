@@ -41,3 +41,7 @@ p {
 .signup-height {
     height: 40rem!important;
 }
+
+.p-galleria .p-galleria-thumbnail-container{
+    background-color: transparent!important;
+}

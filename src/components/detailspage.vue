@@ -9,19 +9,24 @@
                 <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.name" style="min-width: 640px" />
               </template>
               <template #thumbnail="{ item }">
-                <img :src="item.thumbnail" :alt="item.alt" />
+                <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.alt" style="max-width: 100px"/>
               </template>
             </Galleria>
             <div class="parent-card-container w-full container">
-              <div class="card bg-slate-100 font-semibold flex flex-col gap-4">
-                <p class="text-slate-500">Item Name: {{ product.name }}</p>
-                <p class="text-slate-500">Condition: {{ product.inventoryStatus }}</p>
-                <p class="text-slate-500">Price: N{{ product.price }}</p>
-                <p class="text-slate-500">Product Category: {{ product.cateogry }}</p>
-                <p class="text-slate-500">Publish Date: {{ product.publishDate }}</p>
+              <div class="card border font-semibold flex flex-col gap-2 p-0">
+                <p class="text-slate-500 hover:bg-slate-100 p-2 px-4">Name: {{ product.name }}</p>
+                <hr />
+                <p class="text-slate-500 hover:bg-slate-100 p-2 px-4">Status: {{ product.inventoryStatus }}</p>
+                <hr />
+                <p class="text-slate-500 hover:bg-slate-100 p-2 px-4">Price: N{{ product.price }}</p>
+                <hr />
+                <p class="text-slate-500 hover:bg-slate-100 p-2 px-4">Product Category: {{ product.cateogry }}</p>
+                <hr />
+                <p class="text-slate-500 hover:bg-slate-100 p-2 px-4">Publish Date: {{ product.publishDate }}</p>
               </div>
               <div class="card border">
                 <p class="text-2xl font-semibold">Safety tips</p>
+                <hr />
                 <p class="mt-4">
                   Avoid paying in advance, even for delivery<br />
                   Meet with the seller at a safe public place<br />
@@ -38,9 +43,16 @@
           </div>
           <Textarea v-model="product.description" autoResize rows="5" cols="30" placeholder="Description" class="w-auto" />
         </div>
-        <div v-else>
-          <p>Loading...</p>
-        </div>
+        <div v-else class="mt-40">
+            <Skeleton class="mb-2"></Skeleton>
+            <Skeleton width="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="40rem" class="mb-2"></Skeleton>
+            <Skeleton width="5rem" class="mb-2"></Skeleton>
+            <Skeleton height="2rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="4rem" class="mb-5"></Skeleton>       
+            <Skeleton width="80rem"></Skeleton>  
+            <Skeleton class="mt-32" height="15rem"></Skeleton>
+         </div>
       </div>
     </div>
   </template>
@@ -54,9 +66,11 @@
   const product = ref(null);
   const route = useRoute();
   
-  onMounted(() => {
-    getProductDetails();
-  });
+    onMounted(() => {
+        setTimeout(() => {
+            getProductDetails();
+        }, 1000);
+    });
   
   const responsiveOptions = ref([
     {
