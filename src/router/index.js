@@ -24,6 +24,17 @@ const router = createRouter({
       name: 'forgetpassword',
       component: () => import('../views/forgetpassword.vue')
     },
+    {
+      path: '/postads',
+      name: 'postads',
+      component: () => import('../views/postads.vue')
+    },
+    {
+      path: '/detailspage/:id',
+      name: 'detailspage',
+      component: () => import('../views/detailspage.vue'),
+      props: true
+    },
   ]
 })
 

@@ -7,8 +7,9 @@
       </div>
       <div class="flex items-center">
         <MegaMenu :model="items" class="font-semibold"/>
-        <router-link :to="{name: 'signup' }" class="bg-slate-100 p-2 px-4 mr-2">Sign up</router-link>
-        <router-link :to="{name: 'signup' }" class="bg-slate-100 p-2 px-4">Sign in</router-link>
+        <router-link :to="{name: 'signup' }" class="bg-green-600 text-white rounded p-2 px-4 mr-2">Sign up</router-link>
+        <router-link :to="{name: 'signin' }" class="bg-green-600 rounded-s text-white p-2 px-4">Sign in</router-link>
+        <router-link :to="{name: 'postads' }" class="bg-green-600 rounded-e text-white p-2 px-4">Sell</router-link>
       </div>
     </div>
   </header>
