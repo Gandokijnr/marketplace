@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="main-slider">
-      <div class="card">
+      <div v-if="products.length > 0" class="card">
         <Carousel
           :value="products"
           :numVisible="3"
@@ -39,6 +39,11 @@
           </template>
         </Carousel>
       </div>
+      <div v-else class="mt-20 flex justify-evenly">
+            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
+            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
+            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
+         </div>
     </div>
 
     <div class="infinite-scroll w-full bg-gray-100 rounded overflow-auto mt-5">
@@ -57,7 +62,7 @@
     <div class="main-recent-item mt-5 p-2 container mx-auto">
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
       
-      <div class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+      <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         <RouterLink
           v-animateonscroll="{ enterClass: 'fadein' }"
           v-for="(product, index) in paginatedProducts"
@@ -87,8 +92,17 @@
           </div>
         </RouterLink>
       </div>
+      <div v-else class="mt-20 flex justify-evenly">
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+            <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
+         </div>
       <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords" template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink" @page="onPageChange" />
     </div>
+
 
     <ScrollTop class="bg-green-600" />
   </main>
@@ -106,7 +120,9 @@ const rowsPerPage = 6;
 const totalRecords = ref(0);
 
 onMounted(() => {
+  setTimeout(() => {
     fetchProducts();
+  }, 1000)
 });
 
 const images = ref([
