@@ -29,7 +29,7 @@
               </div>
               <div class="mb-3 font-medium">{{ slotProps.data.name }}</div>
               <div class="flex justify-content-between align-items-center">
-                <div class="mt-0 font-semibold text-xl">${{ slotProps.data.price }}</div>
+                <div class="mt-0 font-semibold text-xl">₦{{ slotProps.data.price }}</div>
                 <span>
                   <Button icon="pi pi-heart" severity="secondary" outlined />
                   <Button icon="pi pi-shopping-cart" class="ml-2" />
@@ -79,10 +79,10 @@
           </div>
           <div class="mb-3 font-medium">{{ product.name }}</div>
           <div class="flex justify-between items-center">
-            <div class="font-semibold text-xl">${{ product.price }}</div>
+            <div class="font-semibold text-xl">₦{{ product.price }}</div>
             <div>
-              <Button icon="pi pi-heart" severity="secondary" outlined />
-              <Button icon="pi pi-shopping-cart" class="ml-2" />
+              <Button icon="pi pi-heart" severity="secondary" outlined class="border p-2 rounded" />
+              <Button icon="pi pi-shopping-cart" class="ml-2 bg-green-500 p-2 rounded text-white" />
             </div>
           </div>
         </RouterLink>

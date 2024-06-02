@@ -3,7 +3,7 @@
   <header class="sticky top-0 z-10">
     <div class="card flex justify-content-end position-absolute right-0 align-items-center justify-content-between ">
       <div >
-        <router-link :to="{ name: 'home' }" class="text-2xl font-semibold border-e-4 rounded-full px-3 border-r-primary-inverse">Marketplace</router-link>
+        <router-link :to="{ name: 'home' }" class="text-2xl font-semibold border-e-4 border-e-slate-600 rounded-full px-3 border-r-primary-inverse">Marketplace</router-link>
       </div>
       <div class="flex items-center">
         <MegaMenu :model="items" class="font-semibold"/>
