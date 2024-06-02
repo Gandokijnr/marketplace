@@ -1,71 +1,48 @@
 <template>
-    <footer class="bg-slate-200 ">
-        <div class="footer-section flex justify-evenly mt-12 p-4">
-            <div class="flex flex-col">
+    <footer class="bg-slate-200">
+        <div class="footer-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-4">
+            <!-- About Section -->
+            <div>
                 <h3 class="text-3xl font-semibold">About</h3>
                 <div class="about-content flex flex-col mt-4 gap-4">
-                    <router-link to="/">
-                        About MarketPlace
-                    </router-link>   
-                    <router-link to="/">
-                        Terms & Conditions
-                    </router-link>    
-                    <router-link to="/">
-                        Privacy Policy
-                    </router-link>          
-                    <router-link to="/">
-                        Billing Policy
-                    </router-link>          
-                    <router-link to="/">
-                        Cookie Policy   
-                    </router-link>     
-                    <router-link to="/">
-                        Copyright Infringement Policy
-                    </router-link> 
+                    <RouterLink to="/">About MarketPlace</RouterLink>   
+                    <RouterLink to="/">Terms & Conditions</RouterLink>    
+                    <RouterLink to="/">Privacy Policy</RouterLink>          
+                    <RouterLink to="/">Billing Policy</RouterLink>          
+                    <RouterLink to="/">Cookie Policy</RouterLink>     
+                    <RouterLink to="/">Copyright Infringement Policy</RouterLink> 
                 </div>
             </div>
+
+            <!-- Support Section -->
             <div>
                 <h3 class="text-3xl font-semibold">Support</h3>
                 <div class="support-content flex flex-col mt-4 gap-4">
-                    <router-link to="/">
-                        support@MarketPlace.ng
-                    </router-link>   
-                    <router-link to="/">
-                        Safety tips
-                    </router-link>    
-                    <router-link to="/">
-                        Contact Us
-                    </router-link>          
-                    <router-link to="/">
-                        FAQ
-                    </router-link>                           
-                 </div>
+                    <RouterLink to="/">support@MarketPlace.ng</RouterLink>   
+                    <RouterLink to="/">Safety tips</RouterLink>    
+                    <RouterLink to="/">Contact Us</RouterLink>          
+                    <RouterLink to="/">FAQ</RouterLink>                           
+                </div>
             </div>
+
+            <!-- Our Resources Section -->
             <div>
                 <h3 class="text-3xl font-semibold">Our Resources</h3>
                 <div class="resources-content flex flex-col mt-4 gap-4">
-                    <router-link to="/">
-                        Our blog
-                    </router-link>   
-                    <router-link to="/">
-                        MarketPlace on FB
-                    </router-link>    
-                    <router-link to="/">
-                        Our Instagram
-                    </router-link>          
-                    <router-link to="/">
-                        Our YouTube
-                    </router-link>  
-                    <router-link to="/">
-                        Our Twitter
-                    </router-link>          
+                    <RouterLink to="/">Our blog</RouterLink>   
+                    <RouterLink to="/">MarketPlace on FB</RouterLink>    
+                    <RouterLink to="/">Our Instagram</RouterLink>          
+                    <RouterLink to="/">Our YouTube</RouterLink>  
+                    <RouterLink to="/">Our Twitter</RouterLink>          
                 </div>
             </div>
+
+            <!-- Hot Links Section -->
             <div>
                 <h3 class="text-3xl font-semibold">Hot Links</h3>
-                <router-link :to="{name: 'home'}" class="links-content flex flex-col mt-4 gap-4">
+                <RouterLink :to="{name: 'home'}" class="links-content flex flex-col mt-4 gap-4">
                    MarketPlace Africa
-                </router-link>
+                </RouterLink>
             </div>
         </div>
     </footer>
@@ -76,5 +53,5 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <style scoped>
-
+/* Add any additional styling here */
 </style>
