@@ -1,6 +1,5 @@
 <template>
     <div>
-      <navbar />
       <div class="container mx-auto">
         <div v-if="product" class="card flex flex-col gap-4">
           <div class="flex justify-evenly gap-5">
@@ -61,7 +60,6 @@
   import { ref, onMounted } from 'vue';
   import { useRoute } from 'vue-router';
   import { ProductService } from '@/service/ProductService';
-  import navbar from '@/components/navbar.vue';
   
   const product = ref(null);
   const route = useRoute();

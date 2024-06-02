@@ -1,6 +1,5 @@
 
 <template>
-    <navbar />
     <div class="signup-height flex flex-col items-center justify-center w-full">
        <form class="flex flex-col items-center justify-center rounded p-3 shadow-lg bg-white">
         <span class="flex items-center justify-center text-2xl font-bold">Sign Up</span>
@@ -25,7 +24,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import navbar from '@/components/navbar.vue'
 
 const value = ref(null);
 </script>
