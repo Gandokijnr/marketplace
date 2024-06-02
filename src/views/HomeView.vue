@@ -1,7 +1,5 @@
-
 <template>
-<navbar />
-<main>
+  <main>
     <div class="main-slider">
       <div class="card">
         <Carousel
@@ -61,8 +59,8 @@
       
       <div class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
         <RouterLink
-          v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout' }"
-          v-for="(product, index) in products"
+          v-animateonscroll="{ enterClass: 'fadein' }"
+          v-for="(product, index) in paginatedProducts"
           :key="index"
           :to="{ name: 'detailspage', params: { id: product.id } }"
           class="border-1 surface-border border-round m-2 p-3 hover:shadow-lg"
@@ -89,51 +87,87 @@
           </div>
         </RouterLink>
       </div>
+      <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords" template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink" @page="onPageChange" />
     </div>
-
-
 
     <ScrollTop class="bg-green-600" />
   </main>
- 
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { RouterLink } from "vue-router";
-import navbar from '@/components/navbar.vue'
 import { ProductService } from '@/service/ProductService';
 
-onMounted(() => {
-    ProductService.getProductsSmall().then((data) => (products.value = data.slice(0,9)));
-})
 
-const products = ref();
+const products = ref([]);
+const first = ref(0);
+const rowsPerPage = 6;
+const totalRecords = ref(0);
+
+onMounted(() => {
+    fetchProducts();
+});
 
 const images = ref([
-      { src: '/prada.png', alt: 'Prada' },
-      { src: '/pay on delivery.png', alt: 'Pay on delivery' },
-      { src: '/visa.png', alt: 'visa' },
-      { src: '/master card.png', alt: 'master card' },
-      { src: '/interswitch.png', alt: 'interswitch' },
-      // Add more images as needed
-    ])
+    { src: '/prada.png', alt: 'Prada' },
+    { src: '/pay on delivery.png', alt: 'Pay on delivery' },
+    { src: '/visa.png', alt: 'visa' },
+    { src: '/master card.png', alt: 'master card' },
+    { src: '/interswitch.png', alt: 'interswitch' },
+    // Add more images as needed
+]);
 
 const getSeverity = (status) => {
     switch (status) {
         case 'INSTOCK':
             return 'success';
-
         case 'LOWSTOCK':
             return 'warning';
-
         case 'OUTOFSTOCK':
             return 'danger';
-
         default:
             return null;
     }
 };
 
+const responsiveOptions = [
+    {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 1,
+    },
+    {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 1,
+    },
+    {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1,
+    },
+];
 
+const paginatedProducts = computed(() => {
+    const start = first.value * rowsPerPage;
+    const end = start + rowsPerPage;
+    return products.value.slice(start, end);
+});
+
+const onPageChange = (event) => {
+    first.value = event.page;
+    fetchProducts();
+};
+
+const fetchProducts = () => {
+    ProductService.getProductsSmall().then((data) => {
+        products.value = data;
+        totalRecords.value = data.length;
+    });
+};
 </script>
+
+<style>
+/* Add any additional styling here */
+</style>
