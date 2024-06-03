@@ -8,7 +8,7 @@
           </div>
           
           <!-- Navigation and Actions -->
-          <div class="hidden md:flex items-center">
+          <div class="hidden md:flex items-center justify-between">
             <!-- Mega Menu -->
             <MegaMenu :model="items" class="font-semibold mr-4"/>
   
