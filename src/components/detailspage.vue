@@ -2,14 +2,14 @@
   <div>
     <div class="container mx-auto">
       <div v-if="product" class="grid gap-4 p-4">
-        <div class="grid lg:grid-cols-2 gap-5">
+        <div class="grid lg:grid-cols-2 gap-5 mt-4">
           <!-- Product Image Gallery -->
-          <Galleria :value="product.image" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="min-width: 640px">
+          <Galleria :value="product.image" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px">
             <template #item="{ item }">
-              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.name" class="w-full" />
+              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.name" />
             </template>
             <template #thumbnail="{ item }">
-              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.alt" class="max-w-full" />
+              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.alt" />
             </template>
           </Galleria>
 
