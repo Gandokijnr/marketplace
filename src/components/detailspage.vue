@@ -9,7 +9,7 @@
               <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.name" />
             </template>
             <template #thumbnail="{ item }">
-              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.alt" />
+              <img :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image" :alt="item.alt" class="lg:grid-cols-1" />
             </template>
           </Galleria>
 

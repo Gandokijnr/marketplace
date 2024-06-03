@@ -46,7 +46,10 @@ p {
     background-color: transparent!important;
 }
 
-.p-galleria-thumbnail-items-container {
+
+@media (max-width: 578px) {
+    .p-galleria-thumbnail-items-container {
     overflow: hidden;
     width: 10rem!important;
+    }
 }
