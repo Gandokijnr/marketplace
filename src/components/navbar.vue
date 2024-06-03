@@ -1,6 +1,6 @@
 <template>
     <header class="sticky top-0 z-10 bg-white shadow-md">
-      <div class="container mx-auto p-2">
+      <div class="p-2">
         <div class="flex justify-between items-center py-4">
           <!-- Logo and Branding -->
           <div>
