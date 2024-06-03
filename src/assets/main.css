@@ -45,3 +45,8 @@ p {
 .p-galleria .p-galleria-thumbnail-container{
     background-color: transparent!important;
 }
+
+.p-galleria-thumbnail-items-container {
+    overflow: hidden;
+    width: 10rem!important;
+}
