@@ -50,7 +50,7 @@
         </div>
 
         <!-- Product Description -->
-        <Textarea v-model="product.description" autoResize rows="5" cols="30" placeholder="Description" class="w-full mt-4" />
+        <Textarea v-model="product.description" autoResize rows="5" cols="30" readonly placeholder="Description" class="w-full mt-4" />
       </div>
 
       <!-- Loading Skeleton -->
