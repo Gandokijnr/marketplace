@@ -52,4 +52,10 @@ p {
     overflow: hidden;
     width: 10rem!important;
     }
+
+    .p-megamenu-root-list > .p-menuitem-active > .p-megamenu-panel {
+        display: flex;
+        max-height: 20rem;
+        flex-direction: column !important;
+    }
 }
