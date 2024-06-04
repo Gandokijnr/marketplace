@@ -90,7 +90,8 @@ export const PhotoService = {
                 thumbnailImageSrc: 'https://primefaces.org/cdn/primevue/images/galleria/galleria15s.jpg',
                 alt: 'Description for Image 15',
                 title: 'Title 15'
-            }
+            },
+            
         ];
     },
 

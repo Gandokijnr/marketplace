@@ -379,12 +379,12 @@ export const ProductService = {
 
     async getProductsMini() {
         const products = await this.getProductsData();
-        return products.slice(0, 5);
+        return products
       },
 
     async getProductsSmall() {
     const products = await this.getProductsData();
-    return products.slice(0, 10);
+    return products
   },
 
   async getProducts() {
@@ -394,7 +394,7 @@ export const ProductService = {
 
      async getProductsWithOrdersSmall() {
     const productsWithOrdersData = await this.getProductsWithOrdersData();
-    return productsWithOrdersData.slice(0, 10);
+    return productsWithOrdersData
   },
 
   async getProductsWithOrders() {

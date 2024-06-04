@@ -116,7 +116,7 @@ import { ProductService } from '@/service/ProductService';
 
 const products = ref([]);
 const first = ref(0);
-const rowsPerPage = 6;
+const rowsPerPage = 24;
 const totalRecords = ref(0);
 
 onMounted(() => {
