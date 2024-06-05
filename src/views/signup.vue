@@ -1,6 +1,6 @@
 
 <template>
-    <div class="signup-height flex flex-col items-center justify-center w-full">
+    <div class="signup-height flex flex-col items-center w-full">
        <form class="flex flex-col items-center justify-center rounded p-3 shadow-lg bg-white">
         <span class="flex items-center justify-center text-2xl font-bold">Sign Up</span>
         <div class="flex flex-col gap-4 p-5 rounded">
