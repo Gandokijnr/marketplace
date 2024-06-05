@@ -84,7 +84,7 @@
             <div class="font-semibold text-xl">₦{{ product.price }}</div>
             <div>
               <Button icon="pi pi-heart" severity="secondary" outlined class="border p-2 rounded" />
-              <span v-if="showNumber[index]" class="absolute bg-green-200 rounded p-2 mt-11">{{ product.phone }}</span>
+              <span v-if="showNumber[index]" class="absolute bg-green-200 rounded p-2 mt-11 -ml-20">{{ product.phone }}</span>
               <Button icon="pi pi-phone" class="ml-2 bg-green-500 p-2 rounded text-white" @click="ShowNumber(index)" />
             </div>
           </div>
