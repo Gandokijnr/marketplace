@@ -31,8 +31,6 @@
               <div class="flex justify-content-between align-items-center">
                 <div class="mt-0 font-semibold text-xl">₦{{ slotProps.data.price }}</div>
                 <span>
-                  <Button icon="pi pi-heart" severity="secondary" outlined class="border rounded p-2" />
-                  <Button icon="pi pi-phone" class="ml-2 p-2 bg-green-500 text-white" />
                 </span>
               </div>
             </div>
