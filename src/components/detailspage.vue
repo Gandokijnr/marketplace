@@ -43,7 +43,7 @@
 
             <!-- Action Buttons -->
             <div class="card bg-slate-100 flex items-center justify-start gap-5">
-              <span v-if="showNumber[index]" class="absolute bg-green-200 rounded p-2 mt-28 mr-60">{{ product.phone }}</span>
+              <a href="tel:{{ product.phone }}" v-if="showNumber[index]" class="absolute bg-green-600 rounded p-2  -ml-12 mt-24 font-semibold text-white">{{ product.phone }}</a>
               <Button  @click="ShowNumber(index)" class="pi pi-phone bg-green-500 p-3 rounded text-white">Call</Button>
               <Sidebar v-model:visible="visibleRight" position="right" class="w-full">
                 <p class="text-2xl flex items-center justify-center h-screen text-gray-400">Coming Soon</p>
