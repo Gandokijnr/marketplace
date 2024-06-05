@@ -74,7 +74,13 @@
             <div class="font-semibold text-xl">₦{{ product.price }}</div>
             <div>
               <Button icon="pi pi-heart" severity="secondary" outlined class="border p-2 rounded" />
-              <a href="tel:{{ product.phone }}" v-if="showNumber[index]" class="absolute bg-green-600 rounded p-2 mt-11 -ml-20 font-semibold text-white">{{ product.phone }}</a>
+              <a
+                v-if="showNumber[index]"
+                :href="'tel:' + product.phone"
+                class="absolute bg-green-600 rounded p-2 mt-12 -ml-12 font-semibold text-white"
+              >
+                {{ product.phone }}
+              </a>
               <Button icon="pi pi-phone" class="ml-2 bg-green-500 p-2 rounded text-white" @click="ShowNumber(index)" />
             </div>
           </div>
@@ -106,7 +112,7 @@ const products = ref([]);
 const first = ref(0);
 const rowsPerPage = 24;
 const showNumber = ref([])
-const totalRecords = ref(0);
+const totalRecords = ref(1);
 
 onMounted(() => {
   setTimeout(() => {
