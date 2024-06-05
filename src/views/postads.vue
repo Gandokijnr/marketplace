@@ -1,6 +1,6 @@
 
 <template>
-    <div class="form-container flex justify-center">
+    <div class="form-container flex justify-center mt-5 md:p-10">
         <form action="">
             <div class="card flex flex-col gap-4 justify-center  ">
                 <span>Kindly Fill in your item details</span>
