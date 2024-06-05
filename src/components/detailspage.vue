@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container mx-auto">
+    <div class="container mx-auto p-10">
       <div v-if="product" class="grid gap-4 p-4">
         <div class="grid lg:grid-cols-2 gap-5 mt-4">
           <!-- Product Image Gallery -->
@@ -42,9 +42,13 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="card bg-slate-100 flex gap-5">
-              <Button class="pi pi-phone bg-green-600 text-white p-3 w-full">Call</Button>
-              <Button class="pi pi-comment bg-green-600 text-white p-3 w-full">Chat</Button>
+            <div class="card bg-slate-100 flex items-center justify-center gap-5">
+              <span v-if="showNumber[index]" class="absolute bg-green-200 rounded p-2 mt-28 mr-60">{{ product.phone }}</span>
+              <Button  @click="ShowNumber(index)" class="pi pi-phone bg-green-500 p-3 rounded text-white w-52">Call</Button>
+              <Sidebar v-model:visible="visibleRight" position="right" class="w-1/4">
+                <p class="text-2xl flex items-center justify-center h-screen text-gray-400">Coming Soon</p>
+            </Sidebar>
+            <Button class="pi pi-comment bg-green-600 text-white p-3 w-52"  @click="visibleRight = true">Chat</Button>
             </div>
           </div>
         </div>
@@ -74,6 +78,8 @@ import { useRoute } from 'vue-router';
 import { ProductService } from '@/service/ProductService';
 
 const product = ref(null);
+const showNumber = ref([])
+const visibleRight = ref(false);
 const route = useRoute();
 
 onMounted(() => {
@@ -92,6 +98,10 @@ const responsiveOptions = ref([
     numVisible: 1
   }
 ]);
+
+const ShowNumber = (index) => {
+  showNumber.value[index] =!showNumber.value[index];
+}
 
 const getProductDetails = async () => {
   const productId = route.params.id;
