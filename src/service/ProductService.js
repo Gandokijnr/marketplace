@@ -5,13 +5,14 @@ export const ProductService = {
                 id: '1000',
                 code: 'f230fh0g3',
                 name: 'Bamboo Watch',
-                description: 'A bamboo watch is a timepiece characterized by its unique and eco-friendly materials. Typically, the watch is crafted from bamboo wood, which lends it a lightweight and natural aesthetic. Bamboo watches are known for their sustainability, as bamboo is a renewable resource that grows quickly and requires minimal resources to cultivate. These watches often feature a minimalist design, with the natural grain of the bamboo wood giving each piece a distinct and organic appearance. Bamboo watches appeal to environmentally conscious individuals looking for stylish accessories that make a minimal impact on the environment.',
+                description: 'A bamboo watch is a timepiece characterized by its unique and eco-friendly materials...',
                 image: 'bamboo-watch.jpg',
                 price: 65,
                 category: 'Accessories',
                 quantity: 24,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345670'
             },
             {
                 id: '1001',
@@ -23,7 +24,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 61,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345671'
             },
             {
                 id: '1002',
@@ -35,7 +37,8 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 2,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345672'
             },
             {
                 id: '1003',
@@ -47,7 +50,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 25,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345673'
             },
             {
                 id: '1004',
@@ -59,7 +63,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 73,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345674'
             },
             {
                 id: '1005',
@@ -71,7 +76,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 0,
                 inventoryStatus: 'OUTOFSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345675'
             },
             {
                 id: '1006',
@@ -83,7 +89,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 5,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345676'
             },
             {
                 id: '1007',
@@ -95,7 +102,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 23,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345677'
             },
             {
                 id: '1008',
@@ -107,7 +115,8 @@ export const ProductService = {
                 category: 'Electronics',
                 quantity: 2,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345678'
             },
             {
                 id: '1009',
@@ -119,7 +128,8 @@ export const ProductService = {
                 category: 'Electronics',
                 quantity: 63,
                 inventoryStatus: 'INSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345679'
             },
             {
                 id: '1010',
@@ -131,7 +141,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 0,
                 inventoryStatus: 'OUTOFSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345680'
             },
             {
                 id: '1011',
@@ -143,7 +154,8 @@ export const ProductService = {
                 category: 'Electronics',
                 quantity: 23,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345681'
             },
             {
                 id: '1012',
@@ -155,7 +167,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 74,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345682'
             },
             {
                 id: '1013',
@@ -167,7 +180,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 0,
                 inventoryStatus: 'OUTOFSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345683'
             },
             {
                 id: '1014',
@@ -179,7 +193,8 @@ export const ProductService = {
                 category: 'Electronics',
                 quantity: 8,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345684'
             },
             {
                 id: '1015',
@@ -191,7 +206,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 34,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345685'
             },
             {
                 id: '1016',
@@ -203,7 +219,8 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 12,
                 inventoryStatus: 'INSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345686'
             },
             {
                 id: '1017',
@@ -215,7 +232,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 42,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345687'
             },
             {
                 id: '1018',
@@ -227,7 +245,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 41,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345688'
             },
             {
                 id: '1019',
@@ -239,7 +258,8 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 63,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345689'
             },
             {
                 id: '1020',
@@ -251,7 +271,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 0,
                 inventoryStatus: 'OUTOFSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345690'
             },
             {
                 id: '1021',
@@ -263,7 +284,8 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 6,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345691'
             },
             {
                 id: '1022',
@@ -275,7 +297,8 @@ export const ProductService = {
                 category: 'Accessories',
                 quantity: 62,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345692'
             },
             {
                 id: '1023',
@@ -287,7 +310,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 2,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345693'
             },
             {
                 id: '1024',
@@ -299,7 +323,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 0,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345694'
             },
             {
                 id: '1025',
@@ -311,7 +336,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 52,
                 inventoryStatus: 'INSTOCK',
-                rating: 4
+                rating: 4,
+                phone: '+2347012345695'
             },
             {
                 id: '1026',
@@ -323,7 +349,8 @@ export const ProductService = {
                 category: 'Clothing',
                 quantity: 3,
                 inventoryStatus: 'LOWSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345696'
             },
             {
                 id: '1027',
@@ -335,7 +362,8 @@ export const ProductService = {
                 category: 'Electronics',
                 quantity: 35,
                 inventoryStatus: 'INSTOCK',
-                rating: 3
+                rating: 3,
+                phone: '+2347012345697'
             },
             {
                 id: '1028',
@@ -347,7 +375,8 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 15,
                 inventoryStatus: 'INSTOCK',
-                rating: 5
+                rating: 5,
+                phone: '+2347012345698'
             },
             {
                 id: '1029',
@@ -359,9 +388,11 @@ export const ProductService = {
                 category: 'Fitness',
                 quantity: 25,
                 inventoryStatus: 'INSTOCK',
-                rating: 8
+                rating: 8,
+                phone: '+2347012345699'
             }
         ];
+        
     },
 
     async getProductById(id) {

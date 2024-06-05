@@ -63,14 +63,13 @@
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
       
       <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-        <RouterLink
+        <div
           v-animateonscroll="{ enterClass: 'fadein' }"
           v-for="(product, index) in paginatedProducts"
           :key="index"
-          :to="{ name: 'detailspage', params: { id: product.id } }"
           class="border-1 surface-border border-round m-2 p-3 hover:shadow-lg"
         >
-          <div class="mb-3 relative">
+          <RouterLink :to="{ name: 'detailspage', params: { id: product.id } }" class="mb-3 relative cursor-pointer">
             <img
               :src="'https://primefaces.org/cdn/primevue/images/product/' + product.image"
               :alt="product.name"
@@ -81,16 +80,17 @@
               :severity="getSeverity(product.inventoryStatus)"
               class="absolute top-2 left-2"
             />
-          </div>
+          </RouterLink>
           <div class="mb-3 font-medium">{{ product.name }}</div>
           <div class="flex justify-between items-center">
             <div class="font-semibold text-xl">₦{{ product.price }}</div>
             <div>
               <Button icon="pi pi-heart" severity="secondary" outlined class="border p-2 rounded" />
-              <Button icon="pi pi-phone" class="ml-2 bg-green-500 p-2 rounded text-white" />
+              <span v-if="showNumber[index]" class="absolute bg-green-200 rounded p-2 mt-11">{{ product.phone }}</span>
+              <Button icon="pi pi-phone" class="ml-2 bg-green-500 p-2 rounded text-white" @click="ShowNumber(index)" />
             </div>
           </div>
-        </RouterLink>
+        </div>
       </div>
       <div v-else class="mt-20 flex justify-evenly">
             <Skeleton width="10rem" height="10rem" class="mb-2"></Skeleton>
@@ -117,6 +117,7 @@ import { ProductService } from '@/service/ProductService';
 const products = ref([]);
 const first = ref(0);
 const rowsPerPage = 24;
+const showNumber = ref([])
 const totalRecords = ref(0);
 
 onMounted(() => {
@@ -170,6 +171,11 @@ const paginatedProducts = computed(() => {
     const end = start + rowsPerPage;
     return products.value.slice(start, end);
 });
+
+const ShowNumber = (index) => {
+  showNumber.value[index] =!showNumber.value[index];
+}
+
 
 const onPageChange = (event) => {
     first.value = event.page;
