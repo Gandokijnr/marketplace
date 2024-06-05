@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="main-slider">
-      <div v-if="products.length > 0" class="card">
+      <div v-if="products.length > 0" class="card p-0">
         <Carousel
           :value="products"
           :numVisible="3"
@@ -11,19 +11,13 @@
           :autoplayInterval="3000"
         >
           <template #item="slotProps">
-            <div class="border-1 surface-border border-round m-2 p-3">
+            <div class="border-1 surface-border border-round m-2 p-1">
               <div class="mb-3">
                 <div class="relative mx-auto">
                   <img
                     :src="'https://primefaces.org/cdn/primevue/images/product/' + slotProps.data.image"
                     :alt="slotProps.data.name"
                     class="w-full border-round"
-                  />
-                  <Tag
-                    :value="slotProps.data.inventoryStatus"
-                    :severity="getSeverity(slotProps.data.inventoryStatus)"
-                    class="absolute"
-                    style="left:5px; top: 5px"
                   />
                 </div>
               </div>
@@ -60,7 +54,7 @@
     <div class="main-recent-item mt-5 p-2 container mx-auto">
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
       
-      <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+      <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         <div
           v-animateonscroll="{ enterClass: 'fadein' }"
           v-for="(product, index) in paginatedProducts"
@@ -73,11 +67,7 @@
               :alt="product.name"
               class="border-round w-full"
             />
-            <Tag
-              :value="product.inventoryStatus"
-              :severity="getSeverity(product.inventoryStatus)"
-              class="absolute top-2 left-2"
-            />
+        
           </RouterLink>
           <div class="mb-3 font-medium">{{ product.name }}</div>
           <div class="flex justify-between items-center">

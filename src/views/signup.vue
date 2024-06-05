@@ -16,7 +16,8 @@
         <router-link :to="{ name:  'forgetpassword'}" class="underline">Forget Password</router-link>
         </div>
         <span class="text-slate-300">By continuing you agree to the Policy and Rules</span>
-        <Button label="Sign Up" class="w-full bg-green-500 rounded p-2 text-white" />
+        <Toast />
+        <Button label="Sign Up" class="w-full bg-green-500 rounded p-2 text-white" @click="showInfo" />
         <span class="pt-4">Already have an account <router-link :to="{ name: 'signin' }" class="underline">Sign in</router-link></span>
        </form>
     </div>
@@ -24,6 +25,13 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useToast } from "primevue/usetoast";
 
-const value = ref(null);
+const toast = useToast();
+const email = ref();
+const password = ref();
+
+const showInfo = () => {
+    toast.add({ severity: 'info', summary: 'Info Message', detail: 'Try the calm down, i never do this part 😁😀', life: 3000 });
+};
 </script>

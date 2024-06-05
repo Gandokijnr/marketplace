@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container mx-auto p-10">
+    <div class="container mx-auto md:p-10">
       <div v-if="product" class="grid gap-4 p-4">
         <div class="grid lg:grid-cols-2 gap-5 mt-4">
           <!-- Product Image Gallery -->

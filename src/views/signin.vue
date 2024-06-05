@@ -14,15 +14,23 @@
                 <label for="password">Password</label>
         </FloatLabel>
         </div>
-        <span class="text-slate-300">By continuing you agree to the Policy and Rules</span>
-        <Button label="Sign In" class="w-full bg-green-500 rounded p-2 text-white" />
-        <span class="pt-4">Yet to have an account <router-link :to="{ name: 'signup' }" class="underline">Sign Up</router-link></span>
+        <span class="text-slate-300 w-80">By continuing you agree to the Policy and Rules</span>
+        <Toast />
+        <Button label="Sign In" class="w-80 bg-green-500 rounded p-2 text-white" @click="showInfo" />
+        <span class="pt-4">Yet to have an account <router-link :to="{ name: 'signup' }" class="underline w-">Sign Up</router-link></span>
        </form>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { useToast } from "primevue/usetoast";
 
-const value = ref(null);
+const toast = useToast();
+const email = ref();
+const password = ref();
+
+const showInfo = () => {
+    toast.add({ severity: 'info', summary: 'Info Message', detail: 'Try the calm down, i never do this part 😁😀', life: 3000 });
+};
 </script>
