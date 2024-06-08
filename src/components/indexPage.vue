@@ -2,7 +2,7 @@
     <indexNavbar />
     <div>
       <div class="p-5"> 
-        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
           <router-link to="/phones-and-accessories">
             <button class="bg-green-500 border bg-transparent h-28 px-20 w-72 text-2xl text-white rounded-lg">Phones and Accessories</button>
           </router-link>

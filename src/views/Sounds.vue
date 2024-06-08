@@ -1,7 +1,7 @@
 <template>
     <indexPage />
 
-    <div class="main-recent-item mt-5 p-2 container mx-auto">
+    <div class="main-recent-item mt-5 p-2">
       <span class="text-3xl font-bold text-gray-400">Sounds</span>
       
       <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
