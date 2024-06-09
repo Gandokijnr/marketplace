@@ -1,5 +1,6 @@
 
 <template>
+    <indexNavbar />
     <div class="form-container flex justify-center mt-5 md:p-10">
         <form action="">
             <div class="card flex flex-col gap-4 justify-center  ">
@@ -50,6 +51,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useToast } from "primevue/usetoast"
+import indexNavbar from "@/components/indexNavbar.vue";
 
 import { NodeService } from '@/service/NodeService';
 
