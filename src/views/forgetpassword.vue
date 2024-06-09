@@ -1,3 +1,3 @@
 <template>
-    this is the forget password page
+    this is the forget password pages
 </template>
