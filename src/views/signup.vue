@@ -31,7 +31,7 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import navbar from '@/components/navbar.vue';
 import { useToast } from 'primevue/usetoast';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const toast = useToast();
 const email = ref('');
@@ -45,7 +45,7 @@ const signUp = () => {
     return;
   }
 
-  createUserWithEmailAndPassword(getAuth, email.value, password.value)
+  createUserWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((userCredential) => {
       const user = userCredential.user;
       if (user) {

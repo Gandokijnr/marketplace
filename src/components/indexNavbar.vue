@@ -4,7 +4,7 @@
         <div class="flex justify-between items-center py-4">
           <!-- Logo and Branding -->
           <div>
-            <router-link :to="{ name: 'home' }" class="text-2xl font-semibold border-e-4 border-e-slate-600 rounded-full px-3 border-r-primary-inverse" @click="closeMobileMenu">Marketplace</router-link>
+            <router-link :to="{ name: 'indexPage' }" class="text-2xl font-semibold border-e-4 border-e-slate-600 rounded-full px-3 border-r-primary-inverse" @click="closeMobileMenu">Marketplace</router-link>
           </div>
           
           <!-- Navigation and Actions -->
@@ -22,7 +22,7 @@
               <Sidebar v-model:visible="visibleRight" position="right">
                 <div class="header">
                     <p class="font-semibold">Welcome</p>
-                    <p>Username</p>
+                    <p>{{ user.email }}</p> <!-- Display user's display name or username -->
                     <ul class="profile-content flex flex-col gap-5 mt-4">
                         <li class="flex items-center justify-start gap-10 border p-2 rounded-lg cursor-pointer hover:shadow">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
@@ -52,7 +52,7 @@
                             <p class="text-slate-400">Lorem ipsum dolor sit</p>
                             </div>
                         </li>
-                        <li class="flex items-center justify-start gap-10 border p-2 rounded-lg cursor-pointer hover:shadow">
+                        <li class="flex items-center justify-start gap-10 border p-2 rounded-lg cursor-pointer hover:shadow" @click="logoutUser()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75" />
                             </svg>
@@ -123,10 +123,36 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import { RouterLink } from 'vue-router';
+  import { useRouter } from 'vue-router';
+  import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+
   
   const visibleRight = ref(false);
+  const router = useRouter()
+
+  const auth = getAuth();
+  const user = ref(null);
+
+  onMounted(() => {
+  user.value = auth.currentUser;
+  console.log(user)
+
+});
+
+  async function logoutUser() {
+    if (auth.currentUser) {
+      await signOut(auth).then(() => {
+        console.log('User signed out!');
+        router.push({name: 'home'})
+      }).catch((error) => {
+        console.log(error.message);
+      });
+    } else {
+      console.log('No user is signed in.');
+    }
+  }
 
   const items = ref([
     {
