@@ -123,8 +123,23 @@ import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 import VirtualScroller from 'primevue/virtualscroller';
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
-const app = createApp(App);
+const firebaseConfig = {
+    apiKey: "AIzaSyBxT78KxKDkN-PJkjt-XrPE1qulU9jD1RY",
+    authDomain: "marketplace-751c3.firebaseapp.com",
+    projectId: "marketplace-751c3",
+    storageBucket: "marketplace-751c3.appspot.com",
+    messagingSenderId: "130902397428",
+    appId: "1:130902397428:web:7a3e8258f301d9b09769a1",
+  };
+
+  const firebaseapp = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(firebaseapp);
+
+  const app = createApp(App);
+
 
 app.use(PrimeVue, { ripple: true  });
 app.use(ConfirmationService);

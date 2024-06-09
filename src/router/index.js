@@ -35,6 +35,41 @@ const router = createRouter({
       component: () => import('../views/detailspage.vue'),
       props: true
     },
+    {
+      path: '/indexPage',
+      name: 'indexPage',
+      component: () => import('../views/indexPage.vue')
+    },
+    {
+      path: '/phones-and-accessories',
+      name: 'PhonesAndAccessories',
+      component: () => import('../views/PhonesAndAccessories.vue'),
+    },
+    {
+      path: '/laptops',
+      name: 'Laptops',
+      component: () => import('../views/Laptops.vue'),
+    },
+    {
+      path: '/television',
+      name: 'Television',
+      component: () => import('../views/Television.vue'),
+    },
+    {
+      path: '/sounds',
+      name: 'Sounds',
+      component: () => import('../views/Sounds.vue'),
+    },
+    {
+      path: '/furniture',
+      name: 'Furniture',
+      component: () => import('../views/Furniture.vue'),
+    },
+    {
+      path: '/sports',
+      name: 'Sports',
+      component: () => import('../views/Sounds.vue'),
+    },
   ]
 })
 

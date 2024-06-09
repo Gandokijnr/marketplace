@@ -1,58 +1,7 @@
 <template>
-  <navbar />
-  <main>
-    <div class="main-slider">
-      <div v-if="products.length > 0" class="card p-0">
-        <Carousel
-          :value="products"
-          :numVisible="3"
-          :numScroll="1"
-          :responsiveOptions="responsiveOptions"
-          circular
-          :autoplayInterval="3000"
-        >
-          <template #item="slotProps">
-            <div class="border-1 surface-border border-round m-2 p-1">
-              <div class="mb-3">
-                <div class="relative mx-auto">
-                  <img
-                    :src="'https://primefaces.org/cdn/primevue/images/product/' + slotProps.data.image"
-                    :alt="slotProps.data.name"
-                    class="w-full border-round"
-                  />
-                </div>
-              </div>
-              <div class="mb-3 font-medium">{{ slotProps.data.name }}</div>
-              <div class="flex justify-content-between align-items-center">
-                <div class="mt-0 font-semibold text-xl">₦{{ slotProps.data.price }}</div>
-                <span>
-                </span>
-              </div>
-            </div>
-          </template>
-        </Carousel>
-      </div>
-      <div v-else class="mt-20 flex justify-evenly">
-            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
-            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
-            <Skeleton width="30rem" height="20rem" class="mb-2"></Skeleton>
-         </div>
-    </div>
+    <indexPage />
 
-    <div class="infinite-scroll w-full bg-gray-100 rounded overflow-auto mt-5">
-      <div class="scroll-content flex justify-evenly">
-        <img
-          v-for="(image, index) in images"
-          :src="image.src"
-          :alt="image.alt"
-          :key="index"
-          class="h-24 transition duration-500 ease-in-out transform grayscale hover:grayscale-0"
-        />
-      </div>
-    </div>
-    <hr class="mt-5" />
-
-    <div class="main-recent-item mt-5 p-2 container mx-auto">
+    <div class="main-recent-item mt-5 p-2">
       <span class="text-3xl font-bold text-gray-400">Recent Products</span>
       
       <div v-if="paginatedProducts.length > 0" class="main-items grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
@@ -97,14 +46,11 @@
          </div>
       <Paginator v-model:first="first" :rows="rowsPerPage" :totalRecords="totalRecords" template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink" @page="onPageChange" />
     </div>
-
-
-    <ScrollTop class="bg-green-600" />
-  </main>
-</template>
-
-<script setup>
-import { ref, computed, onMounted } from "vue";
+  </template>
+  
+  <script setup>
+  import indexPage from '@/components/indexPage.vue'
+  import { ref, computed, onMounted } from "vue";
 import navbar from '@/components/navbar.vue'
 import { RouterLink } from "vue-router";
 import { ProductService } from '@/service/ProductService';
@@ -184,8 +130,5 @@ const fetchProducts = () => {
         totalRecords.value = data.length;
     });
 };
-</script>
-
-<style>
-/* Add any additional styling here */
-</style>
+  </script>
+  
