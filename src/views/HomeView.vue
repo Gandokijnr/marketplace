@@ -1,4 +1,5 @@
 <template>
+  <navbar />
   <main>
     <div class="main-slider">
       <div v-if="products.length > 0" class="card p-0">
@@ -104,6 +105,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
+import navbar from '@/components/navbar.vue'
 import { RouterLink } from "vue-router";
 import { ProductService } from '@/service/ProductService';
 
