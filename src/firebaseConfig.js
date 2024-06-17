@@ -1,9 +1,9 @@
-
-  // File: src/firebaseConfig.js
+// File: src/firebaseConfig.js
 
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getAuth } from 'firebase/auth';
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxT78KxKDkN-PJkjt-XrPE1qulU9jD1RY",
@@ -17,5 +17,6 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
 
-export { firebaseApp, analytics, auth };
+export { firebaseApp, analytics, auth, db, collection, getDocs, addDoc };
