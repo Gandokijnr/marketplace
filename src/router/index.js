@@ -1,6 +1,9 @@
+// File: src/router/index.js
+
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import { getAuth } from 'firebase/auth'; // Import Firebase Auth
+import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import Firebase Auth functions
+import { firebaseApp, analytics } from '@/firebaseConfig'; // Correct import names
 
 const routes = [
   {
@@ -67,7 +70,7 @@ const routes = [
   {
     path: '/sports',
     name: 'Sports',
-    component: () => import('../views/Sounds.vue')
+    component: () => import('../views/Sports.vue')
   },
 ];
 
@@ -76,22 +79,28 @@ const router = createRouter({
   routes
 });
 
-router.beforeEach((to, from, next) => {
-  const auth = getAuth();
-  const user = auth.currentUser;
+const auth = getAuth();
 
-  switch (to.name) {
-    case 'indexPage':
-    case 'postads':
-      if (!user) {
+router.beforeEach((to, from, next) => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is authenticated
+      if (to.name === 'signin' || to.name === 'signup') {
+        // Redirect authenticated users away from sign-in and sign-up pages
+        next({ name: 'indexPage' });
+      } else {
+        next();
+      }
+    } else {
+      // User is not authenticated
+      if (to.name === 'indexPage' || to.name === 'postads') {
+        // Redirect unauthenticated users trying to access protected pages
         next({ name: 'signin' });
       } else {
         next();
       }
-      break;
-    default:
-      next();
-  }
+    }
+  });
 });
 
 export default router;

@@ -15,7 +15,11 @@
             <!-- Links -->
             <div class="flex space-x-4 items-center">
               <router-link :to="{ name: 'postads' }" class="bg-green-600 rounded text-white p-2 px-4" @click="closeMobileMenu">Sell</router-link>
-              <router-link :to="{ name: 'postads' }" class="bg-green-600 rounded text-white p-2 px-4" @click="closeMobileMenu">Request</router-link>
+              <Button label="Request" @click="visible = true" class="bg-green-600 text-white p-2 px-4 rounded" />
+              <Dialog v-model:visible="visible" modal header="Header" :style="{ width: '50vw' }" :breakpoints="{ '1199px': '75vw', '575px': '90vw' }">
+                <InputText v-model="value3" type="text" size="large" placeholder="Large" />
+
+              </Dialog>
               <Button @click="visibleRight = true">
                <img src="https://i.pinimg.com/564x/a9/b2/fd/a9b2fdb12dcf8a29b82b1ba291bcefac.jpg" class="size-12 rounded-full border-2 border-green-600" alt="">
               </Button>
@@ -130,6 +134,7 @@
 
   
   const visibleRight = ref(false);
+  const visible = ref(false)
   const router = useRouter()
 
   const auth = getAuth();
