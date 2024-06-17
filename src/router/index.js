@@ -80,11 +80,17 @@ router.beforeEach((to, from, next) => {
   const auth = getAuth();
   const user = auth.currentUser;
 
-  if (to.name === 'indexPage' && !user) {
-    // Redirect to sign in page if not authenticated
-    next({ name: 'signin' });
-  } else {
-    next();
+  switch (to.name) {
+    case 'indexPage':
+    case 'postads':
+      if (!user) {
+        next({ name: 'signin' });
+      } else {
+        next();
+      }
+      break;
+    default:
+      next();
   }
 });
 
