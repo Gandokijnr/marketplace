@@ -2,7 +2,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import { getAuth, onAuthStateChanged } from 'firebase/auth'; // Import Firebase Auth functions
+import { getAuth, onAuthStateChanged } from '/firebase/auth'; // Import Firebase Auth functions
 import { firebaseApp, analytics } from '@/firebaseConfig'; // Correct import names
 
 const routes = [
