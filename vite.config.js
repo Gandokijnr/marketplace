@@ -7,7 +7,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   build: {
     rollupOptions: {
-      external: ['firebase/app'],
+      external: ['firebase']
     },
     chunkSizeWarningLimit: 2000, // Set this to a higher value as needed
   },
